@@ -1,0 +1,65 @@
+.box{
+    text-align: center;
+    max-width: 420px;
+    margin: auto;
+    background-color: darkblue;
+    color: white;
+    padding: 16px;
+    border-radius: 38px;
+}
+
+h1{
+    font-size: 28px;
+    padding: 28px 0;
+    font-weight: bold;
+}
+
+.info-wrapper{
+    background: black;
+    padding: 16px;
+    border-bottom-left-radius: 38px;
+    border-bottom-right-radius: 38px;
+    font-size: 14px;
+    text-align: center;
+}
+
+h2{
+    font-size: 26px;
+    color: rgb(232, 13, 105);
+}
+
+.app{
+    min-height: 100vh;
+    background-image: url(/sfsites/c/resource/bmibackground);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+label{
+    font-size: 22px;
+    color: darkorange;
+}
+
+input{
+    color: darkslateblue;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.custom-button{
+    font-size: 16px;
+    padding: 10px;
+    background-color: rgb(232, 13, 105);
+    margin-bottom: 10px;
+    color: white;
+}
+
+h2{
+    font-size: 20px;
+    color: chartreuse;
+}
+
+.result-value{
+    color: white;
+    font-size: 28px;
+}

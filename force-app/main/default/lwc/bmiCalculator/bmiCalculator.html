@@ -1,0 +1,62 @@
+<template>
+   <div class="app">
+    <div class="box">
+       <h1>BMI Calculator</h1>
+      <template if:true={result}>
+         <section>
+            <h2>
+                Your BMI Value is -
+            </h2>
+
+            <div class="result-value">
+                {bmiValue}
+            </div>
+
+            <h2>
+                So result is -
+            </h2>
+
+            <div class="result-value">
+                {result}
+            </div>
+            <button class="slds-button slds-button_neutral slds-button_stretch custom-button" 
+            onclick={recalculate}>Re Calculate</button> 
+         </section>
+        </template>
+
+        <template if:false={result}>
+       <form onsubmit={submitHandler}>
+        <div class="slds-form-element slds-var-m-bottom_medium">
+            <label class="slds-form-element__label slds-text-title_bold" for="text-input-height">Height(cm)</label>
+            <div class="slds-form-element__control">
+            <input type="number" id="text-input-height" min="0" name="height" value={height} onchange={inputHandler} placeholder="Enter your height in cm" required class="slds-input" />
+            </div>
+            </div>
+
+            <div class="slds-form-element slds-var-m-bottom_medium">
+                <label class="slds-form-element__label slds-text-title_bold" for="text-input-weight">Weight(kg)</label>
+                <div class="slds-form-element__control">
+                <input type="number" id="text-input-weight" min="0" name="weight" value={weight} onchange={inputHandler} placeholder="Enter your weight in kg" required class="slds-input" />
+                </div>
+                </div>
+
+                <button class="slds-button slds-button_neutral slds-button_stretch custom-button">Calculate</button>      
+       </form>
+
+    </template>
+       <div class="info-wrapper">
+        <h2>What your BMI Means</h2>
+        <p class="slds-var-m-bottom_large">Once you measure your BMI ,your Healthy weight range ,If your BMI is</p>
+        <h3 class="slds-text-color_error">Under 18.5</h3>
+        <p class="slds-var-m-bottom_large">You are under weight possibly you are malnourished</p>
+        <h3 class="slds-text-color_success">Between 18.5 to 24.9</h3>
+        <p class="slds-var-m-bottom_large">You are healthy</p>
+        <h3 class="slds-text-color_error">Between  25 to 29.9</h3>
+        <p class="slds-var-m-bottom_large">You are Over Weight</p>
+        <h3 class="slds-text-color_error">Over 30</h3>
+        <p class="slds-var-m-bottom_large">You are Obese</p>
+       </div>
+    </div>
+
+   </div> 
+</template>

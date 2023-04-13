@@ -1,0 +1,84 @@
+<template>
+    <div class="container">
+        <h1>Alarm Clock</h1>
+
+        <img src={clockImage} alt="Clock Image" height="200px" width="200px" class={getShakeImage}>
+
+        <h2>{currentTime}</h2>
+
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label level-color" for="select-hour">Hour(s)</label>
+                    <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                    <select class="slds-select" name="hours" id="select-hour" onchange={changeHandler}>
+                    <option value="">Select</option>
+
+                    <template for:each={hourOptions} for:item="hour">
+                        <option value={hour} key={hour}>{hour}</option>
+                    </template>
+                    </select>
+                    </div>
+                    </div>
+                    </div>
+            </div>
+            <div class="slds-col">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label level-color" for="select-minute">Minute(s)</label>
+                    <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                    <select class="slds-select" name="minutes" id="select-minute" onchange={changeHandler}>
+                    <option value="">Select</option>
+                    <template for:each={minOptions} for:item="min">
+                        <option value={min} key={min}>{min}</option>
+                    </template>
+                    </select>
+                    </div>
+                    </div>
+                    </div>
+            </div>
+            <!-- <div class="slds-col">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="select-second">Second(s)</label>
+                    <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                    <select class="slds-select" id="select-second">
+                    <option value="">Select…</option>
+                    <option>Option One</option>
+                    <option>Option Two</option>
+                    <option>Option Three</option>
+                    </select>
+                    </div>
+                    </div>
+                    </div>
+            </div> -->
+
+            <div class="slds-col">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label level-color" for="select-meri" >AM/PM</label>
+                    <div class="slds-form-element__control">
+                    <div class="slds-select_container">
+                    <select class="slds-select" name="meris" id="select-meri" onchange={changeHandler}>
+                    <option value="">Select</option>
+                    <template for:each={meridian} for:item="meri">
+                        <option value={meri} key={meri}>{meri}</option>
+                    </template>
+                    </select>
+                    </div>
+                    </div>
+                    </div>
+            </div>
+            </div>
+
+            <template if:false={isAlarmSet}>
+                <button class="slds-button slds-button_neutral slds-button_stretch" 
+                disabled={isAllField} onclick={setAlarmHandler}>Set Alarm</button>
+            </template>
+
+           <template if:true={isAlarmSet}>
+            <button class="slds-button slds-button_neutral slds-button_stretch" onclick={clearAlarmHandler}>Clear Alarm</button>
+        </template>
+
+    </div>
+</template>
