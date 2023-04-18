@@ -1,0 +1,28 @@
+<apex:page controller="LinkedInManager">
+<!-- Begin Default Content REMOVE THIS -->
+<h1>Congratulations</h1>
+
+<br/>
+
+<apex:slds />
+
+<apex:form id="theForm">
+
+<apex:pagemessages >
+ </apex:pagemessages>
+
+ <apex:pageBlock >
+    <apex:pageBlockButtons location="top" >
+        <apex:commandButton value="Connect With Linkedln" action="{!doGetAuthorizationCode}"
+
+                  rendered="{!isCode}" />
+
+              <apex:commandButton value="Complete Authorization" action="{!doGetAccessToken}"
+
+                  rendered="{!!isCode}" rerender="theForm" status="statusLinkdln" />
+    </apex:pageBlockButtons>
+ </apex:pageBlock>
+
+</apex:form>
+<!-- End Default Content REMOVE THIS -->
+</apex:page>
